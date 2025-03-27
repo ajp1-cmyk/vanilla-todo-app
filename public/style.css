@@ -1,0 +1,65 @@
+.montserrat{
+	font-family: "Montserrat";
+	font-optical-sizing: auto;
+	font-weight: 500;
+	font-style: normal;
+	font-size: large;
+  }
+.montserrat-h{
+	font-family: "Montserrat";
+	font-optical-sizing: auto;
+	font-weight: 500;
+	font-style: normal;
+	font-size:55px;
+  }
+
+ .nav-options a{
+	color: grey;
+	text-decoration: none;
+}
+
+ .nav-options a:hover{
+	color:rgb(61, 146, 237);
+ }
+
+ .btn{
+
+	background-color: rgb(42, 62, 220);
+	color: white;
+	transition:transform 250ms ease-out;
+ }
+
+ .btn:hover{
+
+	background-color: rgb(36, 35, 35);
+	transform: translateY(-10px);
+ }
+
+
+ .nav-item{
+	width: fit-content;
+	transition: transform 250ms ease-out;
+ }
+ .nav-item:hover{
+	transform: translateY(-2px);
+ }
+
+ .archive-img{
+	width: fit-content;
+	transition: transform 250ms ease-out;
+ }
+.archive-img:hover{
+	transform: translateY(-2px);
+}
+
+
+.caveat{
+	font-family: sans-serif;
+	font-optical-sizing: auto;
+	font-style:normal;
+	font-size:16px;
+	font-weight: 100;
+  }
+h3:hover{
+	cursor: pointer;
+}
