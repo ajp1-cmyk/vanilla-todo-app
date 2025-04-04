@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Todo-App</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+		<div class="nav">
+			<div class="nav-options logo">
+				<img src="./wooden.png" alt="wooden" class="nav-option">
+			</div>
+			<div class="nav-options opt">
+				<div class="nav-option">Theme</div>
+				<div class="nav-option">About Project</div>
+			</div>
+		</div>
+
+		<div class="header">
+				<div>Tasks</div>
+				<dialog >
+						<img src="close.svg" alt="close" class="close">
+
+					<div class="dialog-content">
+					<p>Add task</p>
+					<textarea placeholder="add task..." name="newtask" class="todo"> </textarea>
+						<button class="submit">submit</button>
+					</div>
+
+				</dialog>
+				<button class="add">Add task</button>
+		</div>
+		<div class="content">
+			<% todos.forEach((todo)=>{ %>
+				<div class="item"><span><%= todo.content %></span></div>
+			<% }) %>
+		</div>
+</body>
+<script src="app.js"></script>
+</html>

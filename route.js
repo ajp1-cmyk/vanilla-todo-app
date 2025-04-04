@@ -1,22 +1,27 @@
 const express = require("express");
 const TodoModel = require('./database/models')
+const path = require('path');
 
 // route mechanism
 const router = express.Router();
 
 //home page
-router.get("/", (req, res) => {
-  res.json({
-    "msg":"home page"
-  });
+router.get("/", async (req, res) => {
+  const data = {
+    msg:"data populated"
+  }
+  const todos = await TodoModel.find({});
+
+  res.render('pages/todo',{todos: todos})
 });
 
 // get todos
-router.get("/todos", (req, res) => {
-  const todos = TodoModel.find({});
-  console.log(todos);
+router.get("/todos", async (req, res) => {
+  const todos = await TodoModel.find({});
+
+  console.log(todos[0].content);
   res.json({
-    "msg":"data collected"
+      todos : todos
   });
 });
 
@@ -28,12 +33,16 @@ router.post("/todos/add", (req, res) => {
     title: title,
     content: content,
   };
-
-  TodoModel.create(todoData).then(() => {
-    console.log("todo created");
-  });
-
-  res.send("body handled");
+  postData(todoData,res);
 });
+
+
+// handlers
+async function postData(todoData,res){
+  await TodoModel.create(todoData);
+  res.json({
+    "msg" :"data posted"
+  })
+}
 
 module.exports = router;
