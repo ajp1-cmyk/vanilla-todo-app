@@ -33,7 +33,15 @@
 		</div>
 		<div class="content">
 			<% todos.forEach((todo)=>{ %>
-				<div class="item"><span><%= todo.content %></span></div>
+				<div class="item"><span><%= todo.content %></span>
+					<img class="delete" src="delete.svg" alt="">
+
+					<dialog class="delete-warning">
+						<p>do you want to delete this todo?</p>
+						<button class="yes">yes</button>
+						<button class="no">no</button>
+					</dialog>
+				</div>
 			<% }) %>
 		</div>
 </body>

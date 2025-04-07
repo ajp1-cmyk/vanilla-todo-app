@@ -5,7 +5,6 @@ const routes = require('./route');
 
 const app = express();
 const port = 3000;
-
 //Db connection
 connectDB();
 
@@ -16,11 +15,17 @@ app.set('views', path.join(__dirname, 'views'));
 // middleware
 app.use(express.static('public'));
 app.use(express.json());
-app.use('/api',routes);
+app.use('/',routes);
 
 //default
 app.get('/',(req,res)=>{
 	res.json({"msg":"landing page under construction"})
+})
+
+app.use((error,req,res,next)=>{
+	res.status(500).json({
+		msg: "internal server error"
+	})
 })
 
 // server start
